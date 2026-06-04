@@ -7,7 +7,7 @@
 #
 ---
 include:
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: adbk
     artifact-name: adbk_fw
 
