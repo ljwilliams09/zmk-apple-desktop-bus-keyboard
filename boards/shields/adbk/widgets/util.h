@@ -15,6 +15,12 @@
 #define LVGL_FOREGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_INVERTED) ? lv_color_white() : lv_color_black()
 
+#if defined(LV_IMG_CF_TRUE_COLOR)
+#define ADBK_LV_IMG_CF_TRUE_COLOR LV_IMG_CF_TRUE_COLOR
+#else
+#define ADBK_LV_IMG_CF_TRUE_COLOR LV_COLOR_FORMAT_NATIVE
+#endif
+
 struct status_state {
     uint8_t battery;
     bool charging;
