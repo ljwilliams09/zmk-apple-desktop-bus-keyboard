@@ -7,6 +7,12 @@
 
 #include <lvgl.h>
 
+#if defined(LV_IMG_CF_INDEXED_2BIT)
+#define ADBK_LV_IMG_CF_INDEXED_2BIT LV_IMG_CF_INDEXED_2BIT
+#else
+#define ADBK_LV_IMG_CF_INDEXED_2BIT LV_COLOR_FORMAT_I2
+#endif
+
 #ifndef LV_ATTRIBUTE_MEM_ALIGN
 #define LV_ATTRIBUTE_MEM_ALIGN
 #endif
@@ -35,7 +41,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BOLT uint
 };
 
 const lv_img_dsc_t bolt = {
-    .header.cf = LV_IMG_CF_INDEXED_2BIT,
+    .header.cf = ADBK_LV_IMG_CF_INDEXED_2BIT,
     .header.always_zero = 0,
     .header.reserved = 0,
     .header.w = 11,
